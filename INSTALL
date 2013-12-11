@@ -1,0 +1,57 @@
+When setting up a new alt.chi reviewing system, you have to update some variables.
+
+In System.php:
+
+Line 22: $submissionsPath
+Line 24: $submissionsUrl
+Line 134: $mail->From
+Line 135: $mail->FromName
+Line 169: $mail->From
+Line 170: $mail->FromName
+Line 180: $mail->Body
+
+For author information, will need to alter smarty template author_dump.tpl
+
+Downformaintenance.tpl
+Line 9: contact information
+
+English_review.tpl
+Line 11: contact information
+
+Index.tpl
+Line 6: title
+
+Introduction.tpl might need some editing. This is what users see when they’re not logged in.
+
+Portal.tpl will the the file that needs editing the most – that is where you let people know if the system is open for submission, reviewin, etc. or if it’s closed. This is what users see when they are logged in.
+
+In show_submission.tpl will need to adjust lines 31-36 for new author names format.
+
+In show_submission_guest.tpl will need to do this on lines 19-22
+
+Start.tpl looks like it’s obsolete.
+
+Submission_confirm.tpl and submission_confirm2.tpl will need editing lines 21-29 for new author names. Check also lines 77-83… not sure what’s going on with “extra names”.
+
+Submission.tpl might have to change lines 41-48 for new author names.
+
+Submisson2.tpl same, 39-41
+
+Update_submission.tpl lines 17-20 for new author names.
+
+Verified.tpl – line 6, update to 2013
+
+Verify_conditions.tpl line 24 – update to 2013
+
+Verify_notagree.tpl line 16 – update organizer names
+
+Changing the status of reviewing (not open yet, open, no longer open) happens in show_submission lines 215-260
+
+Email information in login.php lines 57-70
+
+In db.php you’ll need to set:
+
+$dbuser
+$dbpass
+$dbname
+and any other variables that are specific to your database setup.
