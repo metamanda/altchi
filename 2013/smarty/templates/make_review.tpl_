@@ -1,0 +1,46 @@
+{* smarty *}
+
+<html>
+<head>
+</head>
+<body>
+
+<h1>Review for {$submission.title}</h1>
+
+Expertise:
+<select name="expertise">
+<option value="bad">bad
+<option value="moderate" selected>moderate
+<option value="high">high
+</select>
+<br>
+
+Rating:
+<select name="rating">
+<option value="1">1
+<option value="2">2
+<option value="3" selected>3
+<option value="4">4
+<option value="5">5
+</select>
+<br>
+
+Relevance<br>
+<textarea name="relevance">{$form.relevance}</textarea><br>
+
+Significance<br>
+<textarea name="significance">{$form.significance}</textarea><br>
+
+Validity<br>
+<textarea name="validity">{$form.validity}</textarea><br>
+
+Originality<br>
+<textarea name="originality"€{>$form{originalite}</textarea><br
+
+Comments<br>
+<textarea name="comments">{$form.comments}</textarea><br>
+
+<input type="submit" value="Submit"><br>
+
+</body>
+</html>

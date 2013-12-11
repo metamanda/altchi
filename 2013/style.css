@@ -1,0 +1,595 @@
+/* from altchi homepage */
+
+html, body{
+ margin:0;
+ padding:5px;
+ background-color:#ffffff;
+ font-family: Verdana, Arial, sans-serif;
+ font-size:12px;
+ text-align:center;
+ line-height:160%;
+}
+
+#errors
+{
+	color: #e03c26;
+}
+
+p
+{
+ color: black;
+ margin: 0px 0px 10px 0px;
+ text-align: justify;
+}
+
+/*this is new*/
+h1 {
+	font-family: Eurostyle, Verdana, Arial, sans-serif;
+	color: #5bcaeb;
+	border-bottom: 1px solid #5bcaeb;
+	display: block;
+	width: 100%;
+	font-size: 22px;
+	font-weight: 500;
+	padding-bottom: 4px;
+	/*font-variant: small-caps;*/
+	text-transform:uppercase;
+}
+
+h2.horizontalLine {
+ border-top: 1px dashed #B5D0E6;
+ margin-top: 20px;
+ padding-top: 15px;
+}
+
+a {
+	color:#e03c26;
+	font-size:12px;
+	text-decoration:underline;
+   	font-family: Verdana, Arial, sans-serif;
+   	white-space:nowrap;
+}
+a:link {
+	color: #e03c26;
+	text-decoration:none;
+}
+a:visited {
+	color:#e03c26;
+}
+a:hover {
+	text-decoration:underline;
+}
+
+.menuoption {
+	text-align:left;
+	width: 160px;
+}
+
+a.menuoption
+{
+	color: #e03c26;
+	text-decoration: none;
+}
+a.menuoption:link, a.menuoption:visited
+{
+	color: #e03c26;
+}
+a.menuoption:hover 
+{
+	text-decoration: underline;
+}
+
+.forumnav
+{
+	font-size: 12px;
+	margin-bottom: 1em;
+}
+
+.forumnav a:hover
+{
+	font-weight: bold;
+}
+
+textarea, input, .quote {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	border: 1px solid #5bcaeb;
+}
+
+input, textarea {
+	background-color:#d8f2fa;
+}
+
+.textbox {
+   	font-family: Verdana, Arial, sans-serif;
+
+	font-size: 12px;
+	color: #333333;
+	padding: 0px 20px 0px 20px;
+	border: 0px solid ;
+}
+
+#input_post 
+{
+	height: 15em;
+}
+
+#input_history
+{
+	height: 6em;
+}
+
+#input_abstract
+{
+	height: 25em;
+}
+
+.quote
+{
+	padding: 0em 0.5em 0em 0.5em;
+	margin: 0.5em 0.5em 0.5em 0.5em;
+	background-color: #ffffff;
+}
+
+input.field {
+	width: 100%;
+}
+
+textarea {
+	width: 100%;
+	height: auto;
+}
+
+.menucaption
+{
+	width:100%;
+	float:left;
+	position:relative;
+	padding:4px 0px 4px 4px;
+	margin: 0px 15px 0px 0px;
+	/*border-bottom:1px solid #431d5a;*/
+	background-color: #FFFFFF;
+	color:#5bcaeb;
+	font-weight:500;
+	font-variant: small-caps;
+	font-size:18px;
+}
+
+.menu
+{
+	width:100px;
+	float:left;
+	position:relative;
+	padding:5px 0px 5px 5px;
+	margin: 0px 10px 0px 0px;
+	background-color:#FFFFFF;
+	border: 1px solid $262F47;
+	padding-bottom: 0.5em;
+	text-align:left;
+}
+
+/*************** top graphic ***************/
+
+#headerone{
+ width:960px;
+ height:163px;
+ /*float:left;*/
+ position:relative;
+ background-color:#ffffff; 
+ background-image:url('gfx/banner_large.png');
+ background-position:top;
+ background-repeat:no-repeat;
+ /*border-bottom:medium solid #a71e59;*/
+}
+
+#headerlinks {
+ text-align:right;
+ margin-top:93px;
+ padding-right:75px;
+ float:right;
+ width:120px;
+ height:60px;
+ font-family: Eurostyle, Verdana, Arial, sans-serif;
+ color: #000000;
+
+}
+
+/*#headerlinks a{
+ color: #333333;
+ text-decoration: none;
+}*/
+
+
+#footerone{
+ width:860px;
+ height:45px;
+ float:left;
+ padding-top: 10px;
+ margin-top: 30px;
+ position:relative;
+ background-color:#ffffff; 
+ background-image:url('gfx/altchi2013_footer.png');
+ background-repeat:no-repeat;
+ background-position:right;
+}
+
+
+
+#pagewidth{
+ position:relative;
+ width:960px;
+ margin-left:auto;
+ margin-right:auto;
+ border-style:solid;
+ border-color:#CCCCCC;
+ border-width:0px 0px;
+ background-color:#FFFFFF;
+ text-align:left;  
+}
+
+#firstnavcols{
+ width:750px;
+ float:left;
+ position:relative;
+ padding:0px 0px 0px 10px;
+ background-color:#FFFFFF;
+}
+
+/*unselected tab background*/
+#firstunselected{
+ position:relative;
+ float:left;
+ padding:5px 10px 5px 10px;
+}
+
+a.topnav {
+	color:black;
+	font-size:12px;
+	text-decoration:none;
+	font-weight:bold;
+    	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+a.topnav:link {
+	color:black;
+}
+a.topnav:visited {
+	color:black;
+}
+a.topnav:hover {
+	color:#3B627B;
+}
+
+/*body a#topnav-welcome
+{
+ color:#3B627B;
+ border:0px;
+} */
+
+#main
+{
+	width:960px;
+	position:relative;
+	/*float:left;*/
+	background-color:#ffffff;
+	padding: 0px 0px 0px 0px;
+/*	border-style: solid;
+	border-width: 1px 1px;
+	border-color: #cccccc;*/
+}
+
+#leftmenu
+{
+	width: 180px;
+	float: left;
+	position: relative;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #262F47;
+	margin-top:50px;
+	margin-right:10px;
+	margin-left: 20px;
+}
+
+#content, .formtable
+{
+	float:left;
+	position:relative;
+	width:500px;
+	height:auto;
+	padding:0px 0px 0px 0px;
+	background-color:#ffffff;
+	margin-top:30px;
+}
+
+#rightpanel
+{
+  width:192px;
+  height:311px;
+  float:right;
+  position:relative;
+  padding-right:0px;
+  background-image:url('gfx/bottom_right.png');
+  background-repeat:no-repeat;
+  margin-top:-2px;
+}
+
+.topmessage {
+	background-color: #d8f0fa;
+	border: 1px solid #e03c26;
+	color: #000000;
+	padding: 5px;
+}
+
+.topmessage p {
+	color: black;
+}
+
+
+
+.list table, .formtable table, .forumposts table
+{
+
+	padding: 0px 0px 0px 0px;
+	margin: 0 auto;
+	border-style: none;
+	border-width: 1px 1px 1px 1px;
+	border-spacing: 3px;
+	border-collapse: collapse;
+	background-color: #FFFFFF;
+	border-color: #5bcaeb;
+	padding: 10px;
+}
+
+.list th, .formtable th
+{
+	background-color: #FFFFFF;
+	text-align: left;
+	font-weight: bold;
+
+	border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #5bcaeb;
+}
+
+
+.list td, .formtable td
+{
+	padding-left: 8px;
+	padding-right: 8px;
+/*	width: auto;*/
+	font-size: 10pt;
+	border-style: solid;
+	border-width: 0px;
+	border-color: #5bcaeb;
+	background-color: #FFFFFF;
+	vertical-align: top;
+	text-align: left;
+}
+
+.list tr, .formtable tr
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.list td.listcaption, td.formtablelabel
+{
+	background-color: #FFFFFF;
+	width: 4px;
+	text-align: right;
+	font-weight: bold;
+}
+
+.titlelist
+{
+	width: 420px;
+}
+
+.titlelist a
+{
+	white-space: normal;
+}
+
+.abstractlist
+{
+	padding: 0.5em 1em 0.5em 1em;
+	width: 420px;
+}
+
+
+.fullentry
+{
+	text-align: left;
+}
+
+tr.postheader table
+{
+	width: 100%;
+	background-color: #ffffff;
+	padding: 0px;
+	border: 1px solid #5bcaeb;
+
+}
+
+.currentreview
+{
+   text-decoration:none;
+}
+
+.oldreview
+{
+	text-decoration:line-through;
+	color: black;
+}	
+
+
+tr.postheader table tr
+{
+	width: 100%;
+	border: none;
+	padding: 0px;
+	font-size: 8pt;
+}
+
+tr.oldpostheader
+{
+	border: none;
+	padding: 0px;
+	text-decoration: line-through;
+}
+
+tr.postheader table tr td
+{
+	border: 1px solid #5bcaeb;
+	padding: 0px;
+	white-space: nowrap;
+	color: black;
+}
+
+tr.postbody
+{
+	font-size: .8em;
+	border: none;
+	background-color: #f1f1f1;
+}
+
+tr.postbody td
+{
+	padding-bottom: 0.5em;
+}
+
+#menu .login userpass
+{
+	background-color: red;
+}
+
+#registerlist .formtablelabel
+{
+	display: block;
+	float: left;
+	width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#submission_formtable
+{
+	width: 400px;
+}
+
+#registerlist
+{
+	width: 50%;
+	border-style: solid;
+	border-width: 0px 0px 3px 0px;
+	margin: 100px auto;
+	border-color: #5bcaeb;
+	width: 415px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+.wide #registerlist {
+	width: 100%;
+}
+
+.wide #registerlist label {
+	width: auto;
+}
+
+.wide #registerlist ul li {
+	margin-bottom: 1em;
+}
+
+.wide  #registerlist{
+	border-width: 0px;
+	padding: none;
+}
+
+#submitlist ul {
+	list-style-type: none;
+	padding: 0px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}	
+
+#submitlist .formtablelabel
+{
+	display: block;
+	margin-top: 1.8em;
+	margin-left: auto;
+	margin-right: auto;
+	font-weight: bold;
+}
+
+#registerhead {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background-color: #5bcaeb;
+	color: #FFFFFF;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 100%;
+	display: block;
+	margin-bottom: 15px;
+}
+
+#registerheadleft {
+	float: left;
+}
+
+#registerheadright {
+	float: right;
+}
+
+#registerlist ul {
+	list-style-type: none;
+	padding: 10px;	
+	width: 65%;
+	margin: auto;
+}
+
+#registerlist ul li {
+	text-align: right;
+	height: 3em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#registerlist ul li.bigger {
+	height: auto;
+}
+
+#registerlist ul li.checkboxli {
+	height: auto;
+	margin-bottom: 0px;
+}
+#registerlist input {
+	text-align: left;
+	align:left;
+}
+
+#login {
+	margin-top: 3em;
+	padding: 10px;
+	height: 3em;
+}
+
+#password {
+	margin-bottom: -1em;
+}
+
+#firstli {
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#xregisterlist input
+{
+	margin-left: 150px;
+}

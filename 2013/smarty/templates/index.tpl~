@@ -1,0 +1,62 @@
+{* Index page *}
+
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<title>alt.chi forum</title>
+</head>
+<body>
+
+<div id="pagewidth">
+
+{include file="header.tpl"}
+
+<div id="errors">
+{foreach from=$error item="msg"}
+<span class="errormessage">{$msg}</span><br>
+{/foreach}
+</div> {* errors *}
+
+<div id="main">
+
+{if $hidemenu!="true"}
+
+<div id="leftmenu">
+{if $logged_in}
+{include file="usermenu.tpl"}
+{* include file="listmenu.tpl" title="Top rated" list=$topratedsubmissions listnumbers=true *}
+
+{* include file="listmenu.tpl" title="Top reviewers" list=$topreviewers listnumbers=true *}
+
+{if $admin}
+{include file="adminmenu.tpl"}
+{/if}
+
+{include file="searchmenu.tpl"}
+
+{else}
+{include file="loginform.tpl"}
+{/if}
+</div> {* leftmenu *}
+
+{/if}
+
+<div id="content">
+{if not $logged_in}
+<div>
+<h2>Welcome to the alt.chi website!</h2>
+</div>
+
+{/if}
+
+{if $center}
+{include file="$center"}
+{/if}
+</div> {* content*}
+
+</div> {* main *}
+
+</div> {* pagewidth *}
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{* smarty *}
+
+<div id="headerone">
+	<a href="http://sigchi.org"><img src="gfx/sigchi-logo.gif" border="0" alt="SIGCHI logo" align=right hspace="0" style="margin:30px 10px 0px 0px;"></a>
+	<a href="http://acm.org"><img src="gfx/acmlogo.gif" border="0" alt="ACM logo" align=right hspace="0" style="margin:30px 0px 0px 0px;"></a>
+</div>
+
+<div id="firstnavcols">
+<div id="firstunselected"><b>Useful links: </b></div>
+<div id="firstunselected"><a class="topnav" href="http://www.chi2008.org/welcome/" id="topnav-welcome">CHI 2008 site</a></div>
+<div id="firstunselected"><a class="topnav" href="http://chi2008.org/alt.chi.html" id="topnav-community">alt.chi Call For Participation</a></div>
+</div>

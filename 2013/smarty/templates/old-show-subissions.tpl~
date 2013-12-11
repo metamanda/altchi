@@ -1,0 +1,254 @@
+{* smarty *}
+
+<h1>
+<span name="edits" id="title">{$submission.title}</span>
+</h1>
+{if $editable}
+<a href="index.php?action=updatesubmission&id={$submission.id}">edit</a>
+<br>
+<a href="index.php?action=deletesubmission&id={$submission.id}">delete submission</a><br>
+<p>
+{/if}
+
+<div class="list">
+
+<table>
+
+<tr>
+<td class="listcaption">Author</td>
+<td><a href="index.php?action=showuser&id={$submission.user.id}">{$submission.user.firstname} {$submission.user.lastname}</a></td>
+</tr>
+
+{if $submission.additionalauthors}
+<tr>
+<td class="listcaption" nowrap><span style="white-space:nowrap">Additional authors</span></td>
+<td>{$submission.additionalauthors}</td>
+</tr>
+{/if}
+
+<tr>
+<td class="listcaption">Type</td>
+<td>{$submission.type}</td>
+</tr>
+
+<tr>
+<td class="listcaption">Keywords</td>
+<td>
+{$submission.keywords|escape}
+</td>
+</tr>
+
+<tr>
+<td class="listcaption">Resource</td>
+<td>
+{if $submission.link}
+<a href="{$submission.link}">Go to (external link)</a><br>
+{else}
+<a href="{$submission.url}">Download</a><br>
+{/if}
+</td>
+</tr>
+
+<tr>
+<td class="listcaption">Submitted</td>
+<td>{$submission.submitted|date_format:"%Y-%m-%d %H:%M"}</td>
+</tr>
+
+{if $submission.edited}
+<tr>
+<td class="listcaption" nowrap>Last edited</td>
+<td>{$submission.edited|date_format:"%Y-%m-%d %H:%M"}</td>
+</tr>
+{/if}
+
+{if $submission.extras}
+{foreach from=$submission.extras item="field"}
+<tr>
+<td class="listcaption" nowrap><span style="white-space:nowrap">{$field.name|escape}</span></td>
+<td>{$field.content|escape}</td>
+</tr>
+{/foreach}
+{/if}
+
+<tr>
+<td class="listcaption">Submission history</td>
+<td>{$submission.history|escape|nl2br}</td>
+</tr>
+
+</table>
+</div>
+
+<h3>Abstract</h3>
+<div class="textbox">{$submission.abstract|nl2br}</div>
+
+
+<script src="forum.js"></script>
+
+{* <h1>Thread <a href="forum.php?action=showcategory&id={$category.id}">{$category.name}</a> &gt; *}
+<div class="forumnav">
+
+{* <a href="forum.php">Forum</a> &gt; <a href="forum.php?action=showcategory&id={$category.id}">{$category.name}</a> &gt; *}
+
+
+{if $thread.link}<a href="{$thread.link}">{/if}{$thread.subject}{if $thread.link}</a>{/if}</div>
+
+{include file="screen_browser.tpl"}
+
+<div class="forumposts">
+<table width="100%">
+
+{foreach from=$posts item="post"}
+
+<tr class="postheader">
+ <td>
+  <table>
+   <tr>
+    <td id="post_header_{$post.id}" align="left">
+     <a href="index.php?action=showuser&id={$post.user.id}">{$post.user.firstname} {$post.user.lastname}</a> wrote on {$post.posted|date_format:"%Y-%m-%d %H:%M"}
+    </td>
+    <td align="right">
+     {if $post.edited}
+     <span style="white-space:nowrap;">edited {$post.edited|date_format:"%Y-%m-%d %H:%M"}</span>
+     {/if}
+    </td>
+    <td style="text-align: right;">
+     <a href="javascript:quote('{$post.id}');">quote</a>
+     {if $post.editable or $admin}
+     <a href="forum.php?action=editpost&id={$post.id}&index={$index}"><span title="edit">edit</span></a>
+     {/if}
+     {if $admin or $userid==$post.userid}
+     <a href="forum.php?action=deletepost&id={$post.id}&index={$index}"><span title="delete post">x</span></a>
+     {/if}
+    </td>
+   </tr>
+   
+   {if $post.quality != 0}
+   <tr>
+   	<td>Quality: {$post.quality}</td>
+   	<td>{$post.qualitytext}</td>
+   </tr>
+   <tr>
+      	<td>Appropriate: {$post.appropriate}</td>
+      	<td>{$post.appropriatetext}</td>
+   </tr>
+   <tr>
+      	<td>Discussion potential: {$post.controversial}</td>
+      	<td>{$post.controversialtext}</td>
+   </tr>
+   {/if}
+   
+  </table>
+ </td>
+</tr>
+
+<tr class="postbody">
+ <td id="post_{$post.id}" colspan="100">
+  {$post.post}
+ </td>
+</tr>
+
+{foreachelse}
+
+<tr><td colspan="100">
+No posts.
+</tr></td>
+
+{/foreach}
+
+</table>
+</div>
+
+{include file="screen_browser.tpl"}
+
+{if $logged_in}
+{if not $thread.locked}
+<p>
+
+<form method="post" action="index.php?action=showsubmission&id={$submission.id}">
+New post:<br>
+<textarea id="input_post" name="post"></textarea><br>
+
+<p>
+<label for="yesisreview">This is my review</label>
+<input type="radio" name="isreview" value="yes" id="yesisreview" onclick="toggleVisibility(this,document.getElementById('isreviewtrue'));" />
+<label for="noisreview">This is a comment</label>
+<input type="radio" name="isreview" value="no"  checked="checked" id="noisreview" onclick="toggleVisibility(this,document.getElementById('isreviewtrue'));" />
+</p>
+
+<fieldset id="isreviewtrue">
+	<legend>Review scores</legend>
+<p><em>You are allowed only one review per paper.  This will overwrite any previous review scores you have made for this paper; you may comment as much as you like.</em></p>
+	<p>
+	<label for="quality">Quality</label>
+	<select class="reviewonly" name="quality" id="quality">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+	</select>
+	<label for="qualitytext">Why?</label>
+	<input  class="reviewonly"  type="text" size=40 name="qualitytext" value="" />
+	</p>
+
+	<p>
+	<label for="appropriate">Appropriate for alt.chi</label>
+	<select  class="reviewonly"  name="appropriate"  id="appropriate">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+	</select>
+	<label for="appropriatetext">Why?</label>
+	<input  class="reviewonly" type="text" size=40 name="appropriatetext" value="" />
+	</p>
+
+	<p>
+	<label for="controversial">Potential for discussion</label>
+	<select  class="reviewonly"  name="controversial"  id="controversial">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+	</select>
+	<label for="controversialtext">Why?</label>
+	<input class="reviewonly"  type="text" size=40  name="controversialtext" value="" />
+	</p>
+
+</fieldset>
+
+<input type="submit" value="Submit">
+
+{literal}
+<script>
+<!--
+//document.getElementById('isreviewtrue').style.visibility='hidden';
+document.getElementById('isreviewtrue').disabled=true;
+
+function toggleVisibility(theCheckbox,theObject){
+	if(theCheckbox.value=="yes") 
+		theObject.disabled=false;
+	else 
+		theObject.disabled=true;
+
+	}
+-->
+</script>
+{/literal}
+
+</form>
+
+
+
+
+</p>
+{/if}
+{/if}
